@@ -27,7 +27,7 @@
                         counter.NextValue();
                         _cpuUses.TryAdd(ps.ProcessName, new ProcessCounterWithCPUUses(counter));
                     }
-                    catch (Exception)
+                    catch (Exception e)
                     {
                     }
                 }
@@ -105,9 +105,8 @@
             try
             {
                 _cpuUses.Add(_performanceCounter.NextValue() / Environment.ProcessorCount);
-
             }
-            catch (Exception)
+            catch (Exception e)
             {
 
             }
